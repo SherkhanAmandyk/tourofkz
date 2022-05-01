@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Хат
+{% endblock %}
+
+
+{% block content %}
+
+  <form method="post">
+    {% csrf_token %}
+    <h3 >Хат сәтті жіберілді</h3>
+   </form> 
+{% endblock %}

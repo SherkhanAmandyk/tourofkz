@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Montana
+{% endblock %}
+
+{% block content %} 
+
+    <!-- bradcam_area_start -->
+    <div class="bradcam_area" style="background-image: url({% static 'main/img/banner/astana_banner.jpg' %})">
+        <h3>Традиции</h3>
+    </div>
+    <!-- bradcam_area_end -->
+
+
+    <!--================Blog Area =================-->
+    <section class="blog_area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
+                    <div class="blog_left_sidebar">
+                        {% for el in traditional %}
+                        <article class="blog_item">
+                            <div class="blog_item_img">
+                                <img class="card-img rounded-0" src="{{el.photo_url}}" alt="">
+                                <a href="{{el.id}}" class="blog_item_date">
+                                    <p>{{el.dateTime}}</p>
+                                </a>
+                            </div>
+
+                            <div class="blog_details">
+                                <a class="d-inline-block" href="{{el.id}}">
+                                    <h2>{{el.name}}</h2>
+                                </a>
+                                <p>{{el.description}}</p>
+                                <ul class="blog-info-link">
+                                    <li><a href=""><i class="fa fa-user"></i> {{el.byName}}</a></li>
+                                </ul>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog_right_sidebar">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================Blog Area =================-->
+
+{% endblock %}

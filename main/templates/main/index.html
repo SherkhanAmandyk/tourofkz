@@ -1,0 +1,224 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Казахстан
+{% endblock %}
+
+{% block content %} 
+
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider d-flex align-items-center justify-content-center" style="background-image: url( {% static 'main/img/banner/astana_banner.jpg' %} );">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Казахстан</h3>
+                                <p>Мечтая о нашем великом будущем, не следует забывать и о нашем достойном прошлом.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center justify-content-center" style="background-image: url( {% static 'main/img/banner/almaty3_banner.jpg' %})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Казахстан</h3>
+                                <p>У кого единая Отчизна — у тех единое сердце, единые устремления.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider d-flex align-items-center justify-content-center" style="background-image: url( {% static 'main/img/banner/almaty4_banner.jpg' %})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Казахстан</h3>
+                                <p>Народ, неукоснительно почитающий своих предков, столь же безупречно подготавливает будущее своих потомков.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center justify-content-center" style="background-image: url( {% static 'main/img/banner/astana2_banner.jpg' %})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Казахстан</h3>
+                                <p>Только те народы, которым удастся опередить будущее и решительно пойти навстречу вызовам, а не стоять и ждать, окажутся победителями.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- about_area_start -->
+    <div class="about_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5">
+                    <div class="about_info">
+                        <div class="section_title mb-20px">
+                            <span>О нас</span>
+                            <h3>Независимый Казахстан</h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci commodi delectus eligendi laudantium maiores, necessitatibus nulla odio odit placeat possimus
+                            quas ratione sed! Blanditiis cumque deserunt dolores fugiat ipsa laboriosam, laudantium modi nisi repellendus velit.</p>
+                        <a href="http://127.0.0.1:8000/about" class="line-button">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7">
+                    <div class="about_thumb d-flex">
+                        <div class="img_1">
+                            <img src="{% static 'main/img/about/about_1.png' %}" alt="">
+                        </div>
+                        <div class="img_2">
+                            <img src="{% static 'main/img/about/about_2.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_end -->
+
+    <!-- offers_area_start -->
+    <div class="offers_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <span>Казахстан</span>
+                        <h3>Красивые места Казахстана</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for el in place %}
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="{{ el.photo_url }}">
+                        </div>
+                        <h3>{{ el.name }}</h3>
+                        <ul>
+                            <li>{{ el.first }}</li>
+                            <li>{{ el.second }}</li>
+                            <li>From ${{ el.money }}</li>
+                        </ul>
+                        <a href="place/{{ el.id }}" class="book_now">Подробнее</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- offers_area_end -->
+
+    <!-- about_area_start -->
+    <div class="about_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-7 col-lg-7">
+                    <div class="about_thumb2 d-flex">
+                        <div class="img_1">
+                            <img src="{% static 'main/img/about/1.png' %}" alt="">
+                        </div>
+                        <div class="img_2">
+                            <img src="{% static 'main/img/about/2.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5">
+                    <div class="about_info">
+                        <div class="section_title mb-20px">
+                            <span>Национальная кухня</span>
+                            <h3>Кухня казахского народа</h3>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci aliquid at autem, blanditiis commodi consectetur dignissimos
+                            dolor dolorem eaque, esse explicabo fugiat illum incidunt iste iure laborum natus,
+                            nulla odio ratione rem repellendus tempora velit. Consequatur consequuntur et minus.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_end -->
+
+    <!-- features_room_startt -->
+    <div class="features_room">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <span>Казахстан</span>
+                        <h3>Лучшие города Казахстана</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rooms_here">
+            {% for el in city %}
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="{{ el.photo_url }}">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From ${{ el.money }}</span>
+                            <h3>{{ el.name }}</h3>
+                        </div>
+                        <a href="city/{{el.id}}" class="line-button">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- features_room_end -->
+
+    <!-- forQuery_start -->
+    <div class="forQuery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 col-md-12">
+                    <div class="Query_border">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-6 col-md-6">
+                                <div class="Query_text">
+                                    <p>Запостить новость</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="phone_num">
+                                    <a href="http://127.0.0.1:8000/new/">Подробнее</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <br>
+   <form method="post">
+       {% csrf_token %}
+
+       {{ form.fields }}<br>
+       <br>
+
+      
+       <button class="btn btn-success" type="submit">Upload</button>
+
+    </form>
+ {% endblock %}

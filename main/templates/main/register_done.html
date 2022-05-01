@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+New post
+{% endblock %}
+
+{% block content %} 
+
+
+
+  <!-- bradcam_area_start -->
+  <div class="bradcam_area" style="background-image: url({% static 'main/img/banner/bradcam.png' %})">
+      <h3>Done</h3>
+      <h3>{{ data.0 }}</h3>
+  </div>
+  <!-- bradcam_area_end -->
+{% endblock %}

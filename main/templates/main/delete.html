@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Delete post
+{% endblock %}
+
+{% block content %} 
+
+
+  <!-- bradcam_area_start -->
+  <div class="bradcam_area" style="background-image: url({% static 'main/img/banner/bradcam.png' %})">
+      <h3>Delete post</h3>
+  </div>
+  <!-- bradcam_area_end -->
+
+    <br>
+   <form method="post">
+       {% csrf_token %}
+
+       <button class="btn btn-success" type="submit">Удалить</button>
+
+    </form>
+
+{% endblock %}    
